@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h3>Your ID : {{selfEasyrtcid}}</h3>
+
+  <textarea placeholder="Enter message ....." id="sendMessageText"></textarea>
+  <div id="otherClients"></div>
+  <ion-list inset>
+    <button ion-item *ngFor="let item of getOccupants()" (click)="sendStuffWS(item)">
+      Send to {{ item }}
+    </button> 
+  </ion-list>
+
+  <div id="receiveMessageArea">
+    Received Messages:
+    <div id="conversation"></div>
+  </div>
+</ion-content>
